@@ -10,4 +10,22 @@ public sealed class Position
         X += deltaX;
         Y += deltaY;
     }
+
+    public void Move(Position position)
+    {
+        X = position.X;
+        Y = position.Y;
+    }
+
+    public void Set(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    public void Set(Position position)
+    {
+        X = position.X;
+        Y = position.Y;
+    }
 }
