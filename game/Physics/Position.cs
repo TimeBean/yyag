@@ -10,28 +10,17 @@ public sealed class Position
         X = x;
         Y = y;
     }
-    
-    public void Move(int deltaX, int deltaY)
-    {
-        X += deltaX;
-        Y += deltaY;
-    }
 
+    public Position(Position other) : this(other.X, other.Y) { }
+        
     public void Move(Position position)
     {
         X = position.X;
         Y = position.Y;
     }
 
-    public void Set(int x, int y)
+    public override string ToString()
     {
-        X = x;
-        Y = y;
-    }
-
-    public void Set(Position position)
-    {
-        X = position.X;
-        Y = position.Y;
+        return $"({X}, {Y})";
     }
 }

@@ -1,23 +1,24 @@
 using game.Physics;
+using game.Render;
 
 namespace game.Objects;
 
 public class DynamicObject : IMoveable
 {
+    public Display Display { get; private set; }
+    
     private Position _position;
-
-    public DynamicObject(Position position)
+    
+    public DynamicObject(Position position, Display display)
     {
         _position = position;
+        Display = display;
     }
 
-    public DynamicObject(int x, int y) : this(new Position(x, y)) { }
+    public DynamicObject(int x, int y, Display display) : this(new Position(x, y), display) { }
 
     public void Move(Position deltaPosition) => _position.Move(deltaPosition);
     public void Move(int deltaX, int deltaY) => Move(new Position(deltaX, deltaY));
 
-    public void SetPosition(Position position) => _position = position;
-    public void SetPosition(int x, int y) => SetPosition(new Position(x, y));
-
-    public Position Position => _position;
+    public Position Position => new Position(_position);
 }

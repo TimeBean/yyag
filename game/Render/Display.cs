@@ -1,12 +1,19 @@
 namespace game.Render;
 
-public sealed class Display(char[] characters)
+public sealed class Display
 {
     private int _animationFrame;
+    private readonly char[] _characters;
+
+    public Display(char[] characters)
+    {
+        _characters = characters;
+    }
 
     public char GetCharacter()
     {
         _animationFrame++;
-        return characters[_animationFrame % characters.Length];
+        
+        return _characters[_animationFrame % _characters.Length];
     }
 }

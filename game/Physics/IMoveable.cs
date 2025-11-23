@@ -6,6 +6,4 @@ public interface IMoveable
     
     public void Move(Position deltaPosition);
     public void Move(int deltaX, int deltaY);
-    public void SetPosition(Position position);
-    public void SetPosition(int x, int y);
 }
