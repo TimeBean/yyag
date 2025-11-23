@@ -6,11 +6,9 @@ namespace game.Objects;
 public class StaticObject
 {
     private readonly Position _position;
-    private readonly Display _display;
 
-    protected StaticObject(Position position, Display display)
+    public StaticObject(Position position)
     {
         _position = position;
-        _display = display;
     }
 }
