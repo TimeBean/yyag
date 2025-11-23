@@ -5,6 +5,12 @@ public sealed class Position
     private int X { get; set; }
     private int Y { get; set; }
     
+    public Position(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+    
     public void Move(int deltaX, int deltaY)
     {
         X += deltaX;
